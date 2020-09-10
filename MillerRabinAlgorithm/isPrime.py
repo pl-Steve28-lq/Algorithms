@@ -1,11 +1,11 @@
 from random import randint
 
 def gcd(m, n):
-	rem = 0
+	r = 0
 	while n>0:
-		rem = m%n
+		r = m%n
 		m = n
-		n = rem
+		n = r
 	return m
 
 def fastExp(m, e, n):
