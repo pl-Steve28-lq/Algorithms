@@ -32,6 +32,7 @@ def isPrime(n):
 
 		b = fastExp(a,m,n)
 		if b == 1 or b == (n-1): continue
+
 		else:
 			for j in range(k-1):
 				b = (b*b)%n
