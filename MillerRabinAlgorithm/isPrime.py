@@ -13,7 +13,7 @@ def fastExp(m, e, n):
     while e>0:
         while not e%2:
             e = e//2
-            m - (m*m)%2
+            m = (m*m)%2
         e -= 1
         z = (z*m)%n
     return z
