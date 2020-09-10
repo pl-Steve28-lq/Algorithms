@@ -24,10 +24,12 @@ def isPrime(n):
 	while not m%2:
 		m = m//2
 		k += 1
+
 	for i in range(100):
 		f = randint(2,n-1)
 		a = f*(n-2) if n>2 else 2
 		if gcd(a,n) != 1: return False
+
 		b = fastExp(a,m,n)
 		if b == 1 or b == (n-1): continue
 		else:
