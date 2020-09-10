@@ -34,4 +34,5 @@ def isPrime(n):
 				b = (b*b)%n
 				if b == n-1: break
 			if b != n-1: return False
+		continue
 	return True
