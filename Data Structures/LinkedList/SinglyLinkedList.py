@@ -28,10 +28,10 @@ class SinglyLinkedList:
     self.length += 1
   
   def findIndexByValue(self, data):
-    cur = self.head
+    cur = self.head.next
     idx = 0
     while cur:
-      if cur.data = data: return idx
+      if cur.data == data: return idx
       cur = cur.next
       idx += 1
     return -1
