@@ -4,7 +4,7 @@ class BinaryTree:
         self.left = left
         self.right = right
 
-def inorder(tree):
+def inorder(N):
     if type(N) == int: print(N)
     elif N: inorder(N.left); print(N.item); inorder(N.right)
 
