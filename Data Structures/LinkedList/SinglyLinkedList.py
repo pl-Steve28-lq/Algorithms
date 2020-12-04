@@ -22,6 +22,7 @@ class SinglyLinkedList:
     cur = self.head
     while newidx != idx-1:
       cur = cur.next
+      newidx += 1
     node.next = cur.next
     cur.next = node
     self.length += 1
@@ -40,6 +41,7 @@ class SinglyLinkedList:
     cur = self.head
     while newidx != idx:
       cur = cur.next
+      newidx += 1
     return cur
   
   def print(self):
