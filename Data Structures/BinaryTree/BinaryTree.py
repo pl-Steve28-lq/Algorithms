@@ -1,17 +1,29 @@
-class BinaryTree:
-    def __init__(self, item, left=None, right=None):
-        self.item = item
-        self.left = left
-        self.right = right
+def inorder(tree, action, index=1):
+	length = len(tree) - 1
+	if length < index: return
+	inorder(tree, action, 2*index)
+	action(tree[index])
+	inorder(tree, action, 2*index+1)
 
-def inorder(N):
-    if type(N) == int: print(N)
-    elif N: inorder(N.left); print(N.item); inorder(N.right)
+def preorder(tree, action, index=1):
+	length = len(tree) - 1
+	if length < index: return
+	action(tree[index])
+	preorder(tree, action, 2*index)
+	preorder(tree, action, 2*index+1)
 
-def preorder(N):
-    if type(N) == int: print(N)
-    elif N: print(N.item); preorder(N.left); preorder(N.right)
+def postorder(tree, action, index=1):
+	length = len(tree) - 1
+	if length < index: return
+	postorder(tree, action, 2*index)
+	postorder(tree, action, 2*index+1)
+	action(tree[index])
 
-def postorder(N):
-    if type(N) == int: print(N)
-    elif N: postorder(N.left); postorder(N.right); print(N.item)
+t = [0, 1]
+for i in range(6): t.append(2+i)
+def _print(r): print(r, end=' ')
+preorder(t, _print)
+print()
+inorder(t, _print)
+print()
+postorder(t, _print)
